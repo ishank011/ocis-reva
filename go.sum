@@ -171,6 +171,8 @@ github.com/cs3org/go-cs3apis v0.0.0-20200625121012-96e791152b14 h1:ORPIrxw/T33AL
 github.com/cs3org/go-cs3apis v0.0.0-20200625121012-96e791152b14/go.mod h1:UXha4TguuB52H14EMoSsCqDj7k8a/t7g4gVP+bgY5LY=
 github.com/cs3org/go-cs3apis v0.0.0-20200709064917-d96c5f2a42ad h1:XxB0h+UKILRKdr+WgPJaOfW8duVPeVKq/18aip5D/Ws=
 github.com/cs3org/go-cs3apis v0.0.0-20200709064917-d96c5f2a42ad/go.mod h1:UXha4TguuB52H14EMoSsCqDj7k8a/t7g4gVP+bgY5LY=
+github.com/cs3org/go-cs3apis v0.0.0-20200720081540-0d96aec81a2e h1:Q1GsuqKBo74Z6WNkUTVmyCATf7WwaTk8Fyx3Xw4CrU4=
+github.com/cs3org/go-cs3apis v0.0.0-20200720081540-0d96aec81a2e/go.mod h1:UXha4TguuB52H14EMoSsCqDj7k8a/t7g4gVP+bgY5LY=
 github.com/cs3org/reva v0.1.1-0.20200629131207-04298ea1c088 h1:oCRNwQ4M1JoROK/jlYK1Cj1ElXky7ubFO8AA/YKMNfA=
 github.com/cs3org/reva v0.1.1-0.20200629131207-04298ea1c088/go.mod h1:aTjgnI4OFVK+1Ed6EtyDw5Q7Ujs9sSbY74d3I4Ph/xY=
 github.com/cs3org/reva v0.1.1-0.20200630075923-39a90d431566 h1:U70hDCk1IUY8i/lHMMdS18AyLLcicyn/G8LTHMvT/rE=

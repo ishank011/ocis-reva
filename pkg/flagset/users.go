@@ -169,6 +169,20 @@ func UsersWithConfig(cfg *config.Config) []cli.Flag {
 			EnvVars:     []string{"REVA_LDAP_SCHEMA_CN"},
 			Destination: &cfg.Reva.LDAP.Schema.CN,
 		},
+		&cli.StringFlag{
+			Name:        "rest-client-id",
+			Value:       "",
+			Usage:       "User rest driver Client ID",
+			EnvVars:     []string{"REVA_REST_CLIENT_ID"},
+			Destination: &cfg.Reva.Rest.ClientID,
+		},
+		&cli.StringFlag{
+			Name:        "rest-client-secret",
+			Value:       "",
+			Usage:       "User rest driver Client Secret",
+			EnvVars:     []string{"REVA_REST_CLIENT_SECRET"},
+			Destination: &cfg.Reva.Rest.ClientSecret,
+		},
 
 		// Services
 

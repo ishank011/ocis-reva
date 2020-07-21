@@ -196,9 +196,11 @@ type DriverS3 struct {
 
 // OIDC defines the available OpenID Connect configuration.
 type OIDC struct {
-	Issuer   string
-	Insecure bool
-	IDClaim  string
+	Issuer    string
+	Insecure  bool
+	IDClaim   string
+	UIDClaim  string
+	GIDClaim  string
 }
 
 // LDAP defines the available ldap configuration.
@@ -212,6 +214,12 @@ type LDAP struct {
 	BindPassword string
 	IDP          string
 	Schema       LDAPSchema
+}
+
+// Rest defines the user REST driver specification.
+type Rest struct {
+	ClientID string
+	ClientSecret string
 }
 
 // LDAPSchema defines the available ldap schema configuration.
@@ -236,6 +244,7 @@ type Reva struct {
 	TransferExpires int
 	OIDC            OIDC
 	LDAP            LDAP
+	Rest            Rest
 	OCDav           OCDav
 	Storages        StorageConfig
 	// Ports are used to configure which services to start on which port

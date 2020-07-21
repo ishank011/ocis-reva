@@ -109,6 +109,10 @@ func Users(cfg *config.Config) *cli.Command {
 											"cn":          cfg.Reva.LDAP.Schema.CN,
 										},
 									},
+									"rest": map[string]interface{}{
+										"client_id":     cfg.Reva.Rest.ClientID,
+										"client_secret": cfg.Reva.Rest.ClientSecret,
+									},
 								},
 							},
 						},

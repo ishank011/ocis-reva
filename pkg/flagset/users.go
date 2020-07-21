@@ -226,7 +226,7 @@ func UsersWithConfig(cfg *config.Config) []cli.Flag {
 		&cli.StringFlag{
 			Name:        "driver",
 			Value:       "ldap",
-			Usage:       "user driver: 'demo', 'json' or 'ldap'",
+			Usage:       "user driver: 'demo', 'json', 'ldap', or 'rest'",
 			EnvVars:     []string{"REVA_USERS_DRIVER"},
 			Destination: &cfg.Reva.Users.Driver,
 		},

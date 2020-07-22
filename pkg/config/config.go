@@ -58,8 +58,15 @@ type Port struct {
 	Config map[string]interface{}
 }
 
-// Users defines the available users configuration.
+// Users defines the available auth configuration.
 type Users struct {
+	Port
+	Driver string
+	JSON   string
+}
+
+// Users defines the available users configuration.
+type UserProvider struct {
 	Port
 	Driver string
 	JSON   string
@@ -252,6 +259,7 @@ type Reva struct {
 	DataGateway       Port
 	Gateway           Gateway
 	Users             Users
+	UserProvider      UserProvider
 	AuthBasic         Port
 	AuthBearer        Port
 	Sharing           Sharing

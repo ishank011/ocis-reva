@@ -24,6 +24,7 @@ func Users(cfg *config.Config) *cli.Command {
 		Flags: flagset.UsersWithConfig(cfg),
 		Before: func(c *cli.Context) error {
 			cfg.Reva.Users.Services = c.StringSlice("service")
+			cfg.Reva.UserProvider.Services = c.StringSlice("service")
 
 			return nil
 		},
@@ -72,7 +73,7 @@ func Users(cfg *config.Config) *cli.Command {
 
 				rcfg := map[string]interface{}{
 					"core": map[string]interface{}{
-						"max_cpus":             cfg.Reva.Users.MaxCPUs,
+						"max_cpus":             cfg.Reva.UserProvider.MaxCPUs,
 						"tracing_enabled":      cfg.Tracing.Enabled,
 						"tracing_endpoint":     cfg.Tracing.Endpoint,
 						"tracing_collector":    cfg.Tracing.Collector,
@@ -82,15 +83,15 @@ func Users(cfg *config.Config) *cli.Command {
 						"jwt_secret": cfg.Reva.JWTSecret,
 					},
 					"grpc": map[string]interface{}{
-						"network": cfg.Reva.Users.Network,
-						"address": cfg.Reva.Users.Addr,
+						"network": cfg.Reva.UserProvider.Network,
+						"address": cfg.Reva.UserProvider.Addr,
 						// TODO build services dynamically
 						"services": map[string]interface{}{
 							"userprovider": map[string]interface{}{
-								"driver": cfg.Reva.Users.Driver,
+								"driver": cfg.Reva.UserProvider.Driver,
 								"drivers": map[string]interface{}{
 									"json": map[string]interface{}{
-										"users": cfg.Reva.Users.JSON,
+										"users": cfg.Reva.UserProvider.JSON,
 									},
 									"ldap": map[string]interface{}{
 										"hostname":      cfg.Reva.LDAP.Hostname,

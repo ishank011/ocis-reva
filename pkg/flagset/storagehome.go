@@ -334,5 +334,15 @@ func StorageHomeWithConfig(cfg *config.Config) []cli.Flag {
 			EnvVars:     []string{"REVA_STORAGE_OWNCLOUD_LAYOUT"},
 			Destination: &cfg.Reva.Storages.OwnCloud.Layout,
 		},
+
+		// Gateway
+
+		&cli.StringFlag{
+			Name:        "gateway-url",
+			Value:       "localhost:9142",
+			Usage:       "URL to use for the reva gateway service",
+			EnvVars:     []string{"REVA_GATEWAY_URL"},
+			Destination: &cfg.Reva.Gateway.URL,
+		},
 	}
 }

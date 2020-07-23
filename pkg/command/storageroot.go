@@ -80,6 +80,7 @@ func StorageRoot(cfg *config.Config) *cli.Command {
 					},
 					"shared": map[string]interface{}{
 						"jwt_secret": cfg.Reva.JWTSecret,
+						"gatewaysvc": cfg.Reva.Gateway.URL, // Todo or address?
 					},
 					"grpc": map[string]interface{}{
 						"network": cfg.Reva.StorageRoot.Network,

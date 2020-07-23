@@ -111,8 +111,10 @@ func Users(cfg *config.Config) *cli.Command {
 										},
 									},
 									"rest": map[string]interface{}{
-										"client_id":     cfg.Reva.Rest.ClientID,
-										"client_secret": cfg.Reva.Rest.ClientSecret,
+										"client_id":      cfg.Reva.Rest.ClientID,
+										"client_secret":  cfg.Reva.Rest.ClientSecret,
+										"redis_address":  cfg.Reva.Rest.RedisAddress,
+										"redis_password": cfg.Reva.Rest.RedisPassword,
 									},
 								},
 							},

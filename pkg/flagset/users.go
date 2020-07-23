@@ -183,6 +183,20 @@ func UsersWithConfig(cfg *config.Config) []cli.Flag {
 			EnvVars:     []string{"REVA_REST_CLIENT_SECRET"},
 			Destination: &cfg.Reva.Rest.ClientSecret,
 		},
+		&cli.StringFlag{
+			Name:        "rest-redis-address",
+			Value:       "",
+			Usage:       "Address for redis server",
+			EnvVars:     []string{"REVA_REST_REDIS_ADDRESS"},
+			Destination: &cfg.Reva.Rest.RedisAddress,
+		},
+		&cli.StringFlag{
+			Name:        "rest-redis-password",
+			Value:       "",
+			Usage:       "Password for redis server",
+			EnvVars:     []string{"REVA_REST_REDIS_PASSWORD"},
+			Destination: &cfg.Reva.Rest.RedisPassword,
+		},
 
 		// Services
 

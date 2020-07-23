@@ -175,6 +175,9 @@ type DriverEOS struct {
 
 	// Layout of the users home dir path
 	Layout string
+
+	// GatewaySvc stores the endpoint at which the GRPC gateway is exposed
+	GatewaySvc string
 }
 
 // DriverLocal defines the available local storage driver configuration.
@@ -225,8 +228,10 @@ type LDAP struct {
 
 // Rest defines the user REST driver specification.
 type Rest struct {
-	ClientID string
-	ClientSecret string
+	ClientID      string
+	ClientSecret  string
+	RedisAddress  string
+	RedisPassword string
 }
 
 // LDAPSchema defines the available ldap schema configuration.

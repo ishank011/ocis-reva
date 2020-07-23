@@ -108,6 +108,7 @@ func StorageEOSData(cfg *config.Config) *cli.Command {
 										"keytab":                 cfg.Reva.Storages.EOS.Keytab,
 										"single_username":        cfg.Reva.Storages.EOS.SingleUsername,
 										"user_layout":            cfg.Reva.Storages.EOS.Layout,
+										"gatewaysvc":             cfg.Reva.Gateway.URL,
 									},
 									"eoshome": map[string]interface{}{
 										"namespace":              cfg.Reva.Storages.EOS.Namespace,
@@ -126,6 +127,7 @@ func StorageEOSData(cfg *config.Config) *cli.Command {
 										"keytab":                 cfg.Reva.Storages.EOS.Keytab,
 										"single_username":        cfg.Reva.Storages.EOS.SingleUsername,
 										"user_layout":            cfg.Reva.Storages.EOS.Layout,
+										"gatewaysvc":             cfg.Reva.Gateway.URL,
 									},
 								},
 								"timeout":     86400,

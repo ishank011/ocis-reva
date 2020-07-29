@@ -115,6 +115,7 @@ func Users(cfg *config.Config) *cli.Command {
 										"client_secret":  cfg.Reva.Rest.ClientSecret,
 										"redis_address":  cfg.Reva.Rest.RedisAddress,
 										"redis_password": cfg.Reva.Rest.RedisPassword,
+										"id_provider":    cfg.Reva.Rest.IDProvider,
 									},
 								},
 							},

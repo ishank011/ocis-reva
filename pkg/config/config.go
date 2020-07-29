@@ -206,11 +206,11 @@ type DriverS3 struct {
 
 // OIDC defines the available OpenID Connect configuration.
 type OIDC struct {
-	Issuer    string
-	Insecure  bool
-	IDClaim   string
-	UIDClaim  string
-	GIDClaim  string
+	Issuer   string
+	Insecure bool
+	IDClaim  string
+	UIDClaim string
+	GIDClaim string
 }
 
 // LDAP defines the available ldap configuration.
@@ -232,6 +232,7 @@ type Rest struct {
 	ClientSecret  string
 	RedisAddress  string
 	RedisPassword string
+	IDProvider    string
 }
 
 // LDAPSchema defines the available ldap schema configuration.

@@ -197,6 +197,13 @@ func UsersWithConfig(cfg *config.Config) []cli.Flag {
 			EnvVars:     []string{"REVA_REST_REDIS_PASSWORD"},
 			Destination: &cfg.Reva.Rest.RedisPassword,
 		},
+		&cli.StringFlag{
+			Name:        "rest-id-provider",
+			Value:       "",
+			Usage:       "The OIDC Provider",
+			EnvVars:     []string{"REVA_REST_ID_PROVIDER"},
+			Destination: &cfg.Reva.Rest.IDProvider,
+		},
 
 		// Services
 

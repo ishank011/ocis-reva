@@ -18,8 +18,7 @@ require (
 	github.com/prometheus/procfs v0.0.8 // indirect
 	github.com/restic/calens v0.2.0
 	github.com/spf13/viper v1.6.1
-	github.com/uber/jaeger-client-go v2.20.1+incompatible // indirect
 	gopkg.in/ini.v1 v1.51.1 // indirect
 )
 
-replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20200729155245-6024f8d9eac5
+replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20200730160942-53262411ff9b

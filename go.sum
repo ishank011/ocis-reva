@@ -562,6 +562,8 @@ github.com/ishank011/reva v0.0.0-20200731142150-69cb6dc3392c h1:oRYcJUcZX7utlSet
 github.com/ishank011/reva v0.0.0-20200731142150-69cb6dc3392c/go.mod h1:uz//NvCQnQfmFHRAHBjCeL5wsccnuvk6Fylt2uN6Y6U=
 github.com/ishank011/reva v0.0.0-20200804101117-8dbc03eaad73 h1:nsuA++hjz3Ge8t29vdH9/Ccyr8i4+8VheH15PTGIsNM=
 github.com/ishank011/reva v0.0.0-20200804101117-8dbc03eaad73/go.mod h1:DFaKtKa6j9nJ7cdz2v1EyrjRmClZ/hQq0RO2Qrfk+OU=
+github.com/ishank011/reva v0.0.0-20200804103216-ab0dbe1a60fb h1:RzxzhAi2u3QsM+siQIuEEjDyfylK5gD8RDdo2dp1DuY=
+github.com/ishank011/reva v0.0.0-20200804103216-ab0dbe1a60fb/go.mod h1:DFaKtKa6j9nJ7cdz2v1EyrjRmClZ/hQq0RO2Qrfk+OU=
 github.com/jackc/fake v0.0.0-20150926172116-812a484cc733/go.mod h1:WrMFNQdiFJ80sQsxDoMokWK1W5TQtxBFNpzWTD84ibQ=
 github.com/jackc/pgx v3.2.0+incompatible/go.mod h1:0ZGrqGqkRlliWnWB4zKnWtjbSWbGkVEFm4TeybAXq+I=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99/go.mod h1:1lJo3i6rXxKeerYnT8Nvf0QmHCRC1n8sfWVwXF2Frvo=

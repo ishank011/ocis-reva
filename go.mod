@@ -14,11 +14,9 @@ require (
 	github.com/owncloud/flaex v0.0.0-20200411150708-dce59891a203
 	github.com/owncloud/ocis-pkg/v2 v2.2.1
 	github.com/pelletier/go-toml v1.6.0 // indirect
-	github.com/prometheus/client_model v0.0.0-20191202183732-d1d2010b5bee // indirect
-	github.com/prometheus/procfs v0.0.8 // indirect
 	github.com/restic/calens v0.2.0
 	github.com/spf13/viper v1.6.1
 	gopkg.in/ini.v1 v1.51.1 // indirect
 )
 
-replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20200805151713-5eec3c26074a
+replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20200818145003-c36c1bcbb132

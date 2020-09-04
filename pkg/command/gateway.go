@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/signal"
 	"path"
+	"strings"
 	"time"
 
 	"github.com/cs3org/reva/cmd/revad/runtime"
@@ -72,6 +73,31 @@ func Gateway(cfg *config.Config) *cli.Command {
 				uuid := uuid.Must(uuid.NewV4())
 				pidFile := path.Join(os.TempDir(), "revad-"+c.Command.Name+"-"+uuid.String()+".pid")
 
+				rules := map[string]interface{}{
+					cfg.Reva.StorageRoot.MountPath:         cfg.Reva.StorageRoot.URL,
+					cfg.Reva.StorageRoot.MountID:           cfg.Reva.StorageRoot.URL,
+					cfg.Reva.StorageHome.MountPath:         cfg.Reva.StorageHome.URL,
+					cfg.Reva.StorageHome.MountID:           cfg.Reva.StorageHome.URL,
+					cfg.Reva.StorageEOS.MountPath:          cfg.Reva.StorageEOS.URL,
+					cfg.Reva.StorageEOS.MountID:            cfg.Reva.StorageEOS.URL,
+					cfg.Reva.StorageOC.MountPath:           cfg.Reva.StorageOC.URL,
+					cfg.Reva.StorageOC.MountID:             cfg.Reva.StorageOC.URL,
+					cfg.Reva.StorageS3.MountPath:           cfg.Reva.StorageS3.URL,
+					cfg.Reva.StorageS3.MountID:             cfg.Reva.StorageS3.URL,
+					cfg.Reva.StorageWND.MountPath:          cfg.Reva.StorageWND.URL,
+					cfg.Reva.StorageWND.MountID:            cfg.Reva.StorageWND.URL,
+					cfg.Reva.StorageCustom.MountPath:       cfg.Reva.StorageCustom.URL,
+					cfg.Reva.StorageCustom.MountID:         cfg.Reva.StorageCustom.URL,
+					"/public/":                             "localhost:10054",
+					"e1a73ede-549b-4226-abdf-40e69ca8230d": "localhost:10054",
+				}
+
+				storageRules := strings.Split(cfg.Reva.Gateway.StorageRegistryRules, ",")
+				for _, r := range storageRules {
+					parts := strings.Split(r, "=")
+					rules[strings.TrimSpace(parts[0])] = strings.TrimSpace(parts[1])
+				}
+
 				rcfg := map[string]interface{}{
 					"core": map[string]interface{}{
 						"max_cpus":             cfg.Reva.Users.MaxCPUs,
@@ -104,6 +130,7 @@ func Gateway(cfg *config.Config) *cli.Command {
 								"commit_share_to_storage_grant": cfg.Reva.Gateway.CommitShareToStorageGrant,
 								"commit_share_to_storage_ref":   cfg.Reva.Gateway.CommitShareToStorageRef,
 								"share_folder":                  cfg.Reva.Gateway.ShareFolder, // ShareFolder is the location where to create shares in the recipient's storage provider.
+								"home_mapping":                  cfg.Reva.Gateway.HomeMapping,
 								// public links
 								"link_grants_file": cfg.Reva.Gateway.LinkGrants,
 								// other
@@ -129,24 +156,7 @@ func Gateway(cfg *config.Config) *cli.Command {
 								"drivers": map[string]interface{}{
 									"static": map[string]interface{}{
 										"home_provider": cfg.Reva.Gateway.HomeProvider,
-										"rules": map[string]interface{}{
-											cfg.Reva.StorageRoot.MountPath:         cfg.Reva.StorageRoot.URL,
-											cfg.Reva.StorageRoot.MountID:           cfg.Reva.StorageRoot.URL,
-											cfg.Reva.StorageHome.MountPath:         cfg.Reva.StorageHome.URL,
-											cfg.Reva.StorageHome.MountID:           cfg.Reva.StorageHome.URL,
-											cfg.Reva.StorageEOS.MountPath:          cfg.Reva.StorageEOS.URL,
-											cfg.Reva.StorageEOS.MountID:            cfg.Reva.StorageEOS.URL,
-											cfg.Reva.StorageOC.MountPath:           cfg.Reva.StorageOC.URL,
-											cfg.Reva.StorageOC.MountID:             cfg.Reva.StorageOC.URL,
-											cfg.Reva.StorageS3.MountPath:           cfg.Reva.StorageS3.URL,
-											cfg.Reva.StorageS3.MountID:             cfg.Reva.StorageS3.URL,
-											cfg.Reva.StorageWND.MountPath:          cfg.Reva.StorageWND.URL,
-											cfg.Reva.StorageWND.MountID:            cfg.Reva.StorageWND.URL,
-											cfg.Reva.StorageCustom.MountPath:       cfg.Reva.StorageCustom.URL,
-											cfg.Reva.StorageCustom.MountID:         cfg.Reva.StorageCustom.URL,
-											"/public/":                             "localhost:10054",
-											"e1a73ede-549b-4226-abdf-40e69ca8230d": "localhost:10054",
-										},
+										"rules":         rules,
 									},
 								},
 							},

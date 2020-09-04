@@ -25,7 +25,9 @@ type Gateway struct {
 	DisableHomeCreationOnLogin bool
 	// include the home folder config for the storage registry
 	// HomeProvider is the path in the global namespace that the static storage registry uses to determine the home storage
-	HomeProvider string
+	HomeProvider         string
+	HomeMapping          string
+	StorageRegistryRules string
 }
 
 // Sharing defines the available sharing configuration.

@@ -19,4 +19,4 @@ require (
 	gopkg.in/ini.v1 v1.51.1 // indirect
 )
 
-replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20200818151333-64cdbb0cef8f
+replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20200904155217-e2331d3ae410

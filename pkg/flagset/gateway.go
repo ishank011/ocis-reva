@@ -185,6 +185,20 @@ func GatewayWithConfig(cfg *config.Config) []cli.Flag {
 			EnvVars:     []string{"REVA_STORAGE_HOME_PROVIDER"},
 			Destination: &cfg.Reva.Gateway.HomeProvider,
 		},
+		&cli.StringFlag{
+			Name:        "storage-home-mapping",
+			Value:       "",
+			Usage:       "mapping template for user home paths to user-specific mount points",
+			EnvVars:     []string{"REVA_STORAGE_HOME_MAPPING"},
+			Destination: &cfg.Reva.Gateway.HomeMapping,
+		},
+		&cli.StringFlag{
+			Name:        "storage-registry-rules",
+			Value:       "",
+			Usage:       "Arbitrary comma-separated storage registry rules",
+			EnvVars:     []string{"REVA_STORAGE_REGISTRY_RULES"},
+			Destination: &cfg.Reva.Gateway.StorageRegistryRules,
+		},
 
 		&cli.StringFlag{
 			Name:        "frontend-url",

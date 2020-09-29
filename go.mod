@@ -13,10 +13,8 @@ require (
 	github.com/oklog/run v1.0.0
 	github.com/owncloud/flaex v0.0.0-20200411150708-dce59891a203
 	github.com/owncloud/ocis-pkg/v2 v2.2.1
-	github.com/pelletier/go-toml v1.6.0 // indirect
 	github.com/restic/calens v0.2.0
 	github.com/spf13/viper v1.6.1
-	gopkg.in/ini.v1 v1.51.1 // indirect
 )
 
-replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20200924114548-8b41e83c8134
+replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20200929153644-73bbbed78205

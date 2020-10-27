@@ -17,4 +17,4 @@ require (
 	github.com/spf13/viper v1.6.1
 )
 
-replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20201023122906-4d2f1e159e7d
+replace github.com/cs3org/reva => github.com/ishank011/reva v0.0.0-20201027090426-d25908cb2723
